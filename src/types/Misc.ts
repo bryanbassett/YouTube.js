@@ -28,7 +28,16 @@ export type UpdateVideoMetadataOptions = Partial<{
   made_for_kids: boolean;
   thumbnail: Uint8Array;
   privacy: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
+  videoLinkageShortsAttribution?: VideoLinkageShortsAttribution;
 }>;
+
+/**
+ * @description Video linkage shorts attribution is the field for "related video" in shorts
+ * it does nothing on regular videos and although its an array it takes only one value
+ */
+export type VideoLinkageShortsAttribution = {
+  targetExternalVideoId: string[];
+};
 
 export type UploadedVideoMetadataOptions = Partial<{
   title: string;
